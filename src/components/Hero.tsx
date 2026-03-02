@@ -35,7 +35,7 @@ export default function Hero() {
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="space-y-8 text-center lg:text-left order-2 lg:order-1"
+                        className="space-y-8 text-center lg:text-left order-1 lg:order-1"
                     >
                         <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
                             <Sparkles size={14} className="animate-pulse" />
@@ -102,7 +102,7 @@ export default function Hero() {
                         initial={{ opacity: 0, scale: 0.9, x: 50 }}
                         animate={{ opacity: 1, scale: 1, x: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="relative group order-1 lg:order-2"
+                        className="relative group order-2 lg:order-2"
                     >
                         <div className="relative z-10 rounded-[40px] md:rounded-[60px] lg:rounded-[80px] overflow-hidden shadow-2xl shadow-blue-200/50 border-[8px] md:border-[12px] border-white max-w-[450px] mx-auto lg:max-w-none lg:ml-auto">
                             <Image

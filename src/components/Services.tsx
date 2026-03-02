@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Sparkles,
@@ -25,26 +26,30 @@ const services = [
         title: 'Dental Check-ups & Preventive Care',
         icon: <Stethoscope className="w-8 h-8" />,
         description: 'Complete oral examination, cleaning, and early diagnosis to maintain long-term dental health.',
+        details: 'Humare clinic me hum latest intra-oral cameras ka use karte hain taaki aap apne teeth ki live condition dekh sakein. Har check-up me detailed cleaning aur digital scanning shamil hoti hai. Early detection se hum future ke bade kharche aur dard ko rokne me madad karte hain.',
+        images: ['/services/checkup_1.png', '/services/checkup_2.png'],
         features: [
             'Complete oral examination',
-            'Professional teeth cleaning & polishing',
-            'Preventive dental treatments',
-            'Early diagnosis of dental problems',
-            'Regular preventive care helps maintain long-term dental health.'
+            'Professional teeth cleaning & brushing advice',
+            'Digital dental scans & early diagnosis',
+            'Fluoride treatments for cavity prevention',
+            'Personalized dental health reports'
         ],
-        color: 'bg-blue-50 text-logo-blue',
-        hoverColor: 'group-hover:bg-logo-blue group-hover:text-white',
+        color: 'bg-blue-50 text-blue-600',
+        hoverColor: 'group-hover:bg-blue-600 group-hover:text-white',
     },
     {
         title: 'Tooth Fillings & Restorative Dentistry',
         icon: <ShieldCheck className="w-8 h-8" />,
         description: 'Tooth-colored cavity fillings, crowns, and bridges to repair damaged or decayed teeth effectively.',
+        details: 'Hum sirf high-quality tooth-colored composite materials use karte hain jo bilkul asli daant jaise dikhte hain. Procedure puri tarah painless hota hai aur filling ki durability saalo tak rehti hai. Hamara focus daant ki natural strength restore karne par hota hai.',
+        images: ['/services/fillings_1.png', '/services/fillings_2.png'],
         features: [
-            'Tooth-colored cavity fillings',
-            'Dental crowns',
-            'Dental bridges',
-            'Tooth restoration procedures',
-            'These treatments help repair damaged or decayed teeth effectively.'
+            'Seamless tooth-colored fillings',
+            'Zirconia & PFM dental crowns',
+            'Durable dental bridges',
+            'Painless decay removal',
+            'Natural-looking dental restorations'
         ],
         color: 'bg-teal-50 text-teal-600',
         hoverColor: 'group-hover:bg-teal-600 group-hover:text-white',
@@ -53,12 +58,14 @@ const services = [
         title: 'Root Canal Treatment',
         icon: <Syringe className="w-8 h-8" />,
         description: 'Advanced procedures performed to remove infection and preserve natural teeth while relieving pain.',
+        details: 'Microscopic Root Canal ke zariye hum 100% precision ensure karte hain. Humare machines noiseless hain taaki aapko dar na lage aur hum maximum cases ko single-sitting me complete karne ki koshish karte hain, jisse aapka samay bachta hai.',
+        images: ['/services/rct_1.png', '/services/rct_2.png'],
         features: [
-            'Advanced root canal procedures',
-            'Infection removal techniques',
-            'Natural tooth preservation',
-            'Pain relief management',
-            'State-of-the-art dental technology usage'
+            'Single-sitting root canal treatment',
+            'Highly precise microscopic procedures',
+            'Noiseless electronic equipment',
+            'Complete infection removal',
+            'Painless technique with local anesthesia'
         ],
         color: 'bg-rose-50 text-rose-600',
         hoverColor: 'group-hover:bg-rose-600 group-hover:text-white',
@@ -67,12 +74,14 @@ const services = [
         title: 'Cosmetic Dentistry',
         icon: <Sparkles className="w-8 h-8" />,
         description: 'Teeth whitening, smile designing, and veneers for an aesthetic smile correction and boost in confidence.',
+        details: 'Smile designing ke liye hum Digital Smile Design (DSD) software use karte hain, jisme aap result pehle hi dekh sakte hain. Veneers aur Whitening humare expert doctors karte hain taki aapko ek natural aur brilliant smile mil sake.',
+        images: ['/services/cosmetic_1.png', '/services/cosmetic_2.png'],
         features: [
-            'Teeth whitening treatments',
-            'Smile designing',
-            'Dental veneers',
-            'Aesthetic smile correction',
-            'Enhance the appearance of your smile with modern cosmetic solutions.'
+            'Laser teeth whitening',
+            'Digital Smile Designing (DSD)',
+            'Ultra-thin porcelain veneers',
+            'Aesthetic smile makeovers',
+            'Tooth contouring & shaping'
         ],
         color: 'bg-violet-50 text-violet-600',
         hoverColor: 'group-hover:bg-violet-600 group-hover:text-white',
@@ -81,12 +90,14 @@ const services = [
         title: 'Braces & Clear Aligners',
         icon: <Activity className="w-8 h-8" />,
         description: 'Metal, ceramic braces, and invisible aligners for properly aligned teeth and improved bite.',
+        details: 'Hum invisible clear aligners me specialisation rakhte hain jo ki pehenne me bilkul comfortable aur dikhne me invisible hote hain. Monthly progress scanning se hum aapka treatment monitor karte hain taaki results jaldi aur perfect milein.',
+        images: ['/services/braces_1.png', '/services/braces_2.png'],
         features: [
-            'Metal braces',
-            'Ceramic braces',
-            'Invisible aligners',
-            'Teeth alignment correction',
-            'Orthodontic treatments designed for properly aligned teeth and improved bite.'
+            'Custom-made clear aligners',
+            'Traditional metal & ceramic braces',
+            'Modern self-ligating braces',
+            'Monthly progress digital monitoring',
+            'Comfortable orthodontic solutions'
         ],
         color: 'bg-indigo-50 text-indigo-600',
         hoverColor: 'group-hover:bg-indigo-600 group-hover:text-white',
@@ -95,11 +106,14 @@ const services = [
         title: 'Gum Treatment (Periodontal Care)',
         icon: <Droplets className="w-8 h-8" />,
         description: 'Scaling, root planing, and gum disease treatments to ensure your gums stay healthy and strong.',
+        details: 'Laser gum treatment ke zariye hum bina kisi bleeding ya pain ke masoodo ki bimari ko theek karte hain. Professional scaling aur deep root planing se hum masoodo ko majboot banate hain taaki aapke daant lifetime saath dein.',
+        images: ['/services/gum_1.png', '/services/gum_2.png'],
         features: [
-            'Scaling & root planing',
-            'Gum disease treatment',
-            'Deep cleaning procedures',
-            'Healthy gums play a vital role in maintaining strong teeth.'
+            'Advanced laser gum therapy',
+            'Professional scaling & polishing',
+            'Treatments for bleeding & swollen gums',
+            'Deep root planing',
+            'Preventive periodontal management'
         ],
         color: 'bg-emerald-50 text-emerald-600',
         hoverColor: 'group-hover:bg-emerald-600 group-hover:text-white',
@@ -108,12 +122,14 @@ const services = [
         title: 'Dental Implants',
         icon: <Bone className="w-8 h-8" />,
         description: 'Permanent replacement options for missing teeth that restore both function and appearance naturally.',
+        details: 'Hum globally recognized titanium implants use karte hain jo ki lifetime durability ke saath aate hain. Computer-guided surgery ki wajah se procedure fast, painless aur highly accurate hota hai, jisse healing bahut jaldi hoti hai.',
+        images: ['/services/implant_1.png', '/services/implant_2.png'],
         features: [
-            'Permanent tooth replacement',
-            'Natural appearance restoration',
-            'Functional improvement',
-            'High-quality titanium implants',
-            'Long-lasting dental solutions'
+            'Precision computer-guided implants',
+            'Single-tooth & full-mouth restorations',
+            'High-quality titanium materials',
+            'Lifetime durable dental solutions',
+            'Fast healing & recovery process'
         ],
         color: 'bg-amber-50 text-amber-600',
         hoverColor: 'group-hover:bg-amber-600 group-hover:text-white',
@@ -122,24 +138,30 @@ const services = [
         title: 'Tooth Extraction & Oral Surgery',
         icon: <Scissors className="w-8 h-8" />,
         description: 'Safe and comfortable surgical care including wisdom tooth removal and minor oral procedures.',
+        details: 'Humare yahan sterile atmosphere me painless extraction ki jaati hai. Wisdom tooth surgery expert oral surgeons dwara kam se kam discomfort aur special instruments ke saath ki jaati hai taaki aapka recovery fast ho.',
+        images: ['/services/surgery_1.png', '/services/surgery_2.png'],
         features: [
-            'Simple tooth extraction',
-            'Wisdom tooth removal',
-            'Minor oral surgical procedures',
-            'Safe and comfortable surgical dental care.'
+            'Painless wisdom tooth removal',
+            'Safe surgical tooth extractions',
+            'Sterilized surgical environment',
+            'Post-operative care & monitoring',
+            'Minor oral surgical procedures'
         ],
-        color: 'bg-orange-50 text-logo-blue',
-        hoverColor: 'group-hover:bg-logo-blue group-hover:text-white',
+        color: 'bg-orange-50 text-orange-600',
+        hoverColor: 'group-hover:bg-orange-600 group-hover:text-white',
     },
     {
         title: 'Pediatric Dentistry (Kids Dental Care)',
         icon: <Baby className="w-8 h-8" />,
         description: 'Specialized dental check-ups and preventive care in a friendly environment tailored for children.',
+        details: 'Baccho ke liye humare pas colorful environment aur gentle specialists hain. Hum "No-Pain" policy follow karte hain aur treats aur rewards use karte hain taaki bacho ko dentist se darr na lage aur unki dental health hamesha bani rahe.',
+        images: ['/services/pediatric_1.png', '/services/pediatric_2.png'],
         features: [
-            'Dental check-ups for children',
-            'Preventive treatments',
-            'Cavity protection care',
-            'Specialized dental services for children in a friendly environment.'
+            'Kid-friendly dental environment',
+            'Pain-free treatments for children',
+            'Fluoride & sealant protections',
+            'Early orthodontic screenings',
+            'Engagement & reward-based dental care'
         ],
         color: 'bg-pink-50 text-pink-600',
         hoverColor: 'group-hover:bg-pink-600 group-hover:text-white',
@@ -257,40 +279,63 @@ export default function Services() {
 
                             {/* Modal Content */}
                             <div className="p-8 md:p-12 bg-white">
-                                <div className="space-y-6 md:space-y-8">
-                                    <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium">
-                                        {selectedService.description}
-                                    </p>
+                                <div className="space-y-10">
+                                    {/* Detailed Description */}
+                                    <div className="space-y-4">
+                                        <h4 className="text-xs font-bold text-blue-600 uppercase tracking-widest">How we do it</h4>
+                                        <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-semibold">
+                                            {selectedService.details}
+                                        </p>
+                                    </div>
 
-                                    <div className="grid gap-3 md:gap-4">
-                                        {selectedService.features.map((feature, i) => (
-                                            <motion.div
-                                                initial={{ opacity: 0, x: -10 }}
-                                                animate={{ opacity: 1, x: 0 }}
-                                                transition={{ delay: i * 0.1 }}
-                                                key={i}
-                                                className="flex items-start space-x-3 group"
-                                            >
-                                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mt-1">
-                                                    <CheckCircle2 className="w-4 h-4" />
-                                                </div>
-                                                <span className="text-slate-700 font-medium text-sm md:text-base">{feature}</span>
-                                            </motion.div>
+                                    {/* AI Image Gallery */}
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        {selectedService.images.map((img, i) => (
+                                            <div key={i} className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border-4 border-slate-50">
+                                                <Image
+                                                    src={img}
+                                                    alt={`${selectedService.title} - ${i + 1}`}
+                                                    fill
+                                                    className="object-cover"
+                                                />
+                                            </div>
                                         ))}
                                     </div>
 
-                                    <div className="pt-6 md:pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
+                                    {/* Key Features */}
+                                    <div className="space-y-6">
+                                        <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest">Service Includes</h4>
+                                        <div className="grid sm:grid-cols-2 gap-4">
+                                            {selectedService.features.map((feature, i) => (
+                                                <motion.div
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    animate={{ opacity: 1, x: 0 }}
+                                                    transition={{ delay: i * 0.1 }}
+                                                    key={i}
+                                                    className="flex items-start space-x-3 p-3 rounded-2xl bg-slate-50/50"
+                                                >
+                                                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mt-0.5">
+                                                        <CheckCircle2 className="w-3.5 h-3.5" />
+                                                    </div>
+                                                    <span className="text-slate-700 font-bold text-sm">{feature}</span>
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Action Buttons */}
+                                    <div className="pt-6 md:pt-10 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
                                         <Link
                                             href="#appointment"
                                             onClick={() => setSelectedService(null)}
-                                            className="w-full bg-blue-600 text-white px-8 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center space-x-2 shadow-xl shadow-blue-200 hover:-translate-y-1 transition-all"
+                                            className="w-full bg-blue-600 text-white px-8 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center space-x-3 shadow-2xl shadow-blue-200 hover:-translate-y-1 transition-all active:scale-95"
                                         >
                                             <Calendar className="w-5 h-5" />
                                             <span>Book Appointment</span>
                                         </Link>
                                         <Link
                                             href="tel:+911234567890"
-                                            className="w-full bg-slate-900 text-white px-8 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center space-x-2 hover:bg-slate-800 transition-all shadow-lg shadow-slate-200"
+                                            className="w-full bg-slate-900 text-white px-8 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center space-x-3 hover:bg-slate-800 transition-all shadow-xl active:scale-95"
                                         >
                                             <Phone className="w-5 h-5" />
                                             <span>Call Clinic</span>

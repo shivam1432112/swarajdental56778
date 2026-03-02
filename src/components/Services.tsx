@@ -26,7 +26,7 @@ const services = [
         title: 'Dental Check-ups & Preventive Care',
         icon: <Stethoscope className="w-8 h-8" />,
         description: 'Complete oral examination, cleaning, and early diagnosis to maintain long-term dental health.',
-        details: 'Humare clinic me hum latest intra-oral cameras ka use karte hain taaki aap apne teeth ki live condition dekh sakein. Har check-up me detailed cleaning aur digital scanning shamil hoti hai. Early detection se hum future ke bade kharche aur dard ko rokne me madad karte hain.',
+        details: 'At our clinic, we utilize the latest intra-oral cameras and digital diagnostic tools so you can see your dental health in real-time. Every check-up includes a thorough cleaning and comprehensive scanning to ensure early detection of any issues, preventing future discomfort and costly procedures.',
         images: ['/services/checkup_1.png', '/services/checkup_2.png'],
         features: [
             'Complete oral examination',
@@ -42,7 +42,7 @@ const services = [
         title: 'Tooth Fillings & Restorative Dentistry',
         icon: <ShieldCheck className="w-8 h-8" />,
         description: 'Tooth-colored cavity fillings, crowns, and bridges to repair damaged or decayed teeth effectively.',
-        details: 'Hum sirf high-quality tooth-colored composite materials use karte hain jo bilkul asli daant jaise dikhte hain. Procedure puri tarah painless hota hai aur filling ki durability saalo tak rehti hai. Hamara focus daant ki natural strength restore karne par hota hai.',
+        details: 'We use high-grade, biocompatible composite materials that perfectly match the natural shade of your teeth. Our restorative procedures are entirely painless and designed for maximum durability, focusing on restoring the natural strength and aesthetics of your smile.',
         images: ['/services/fillings_1.png', '/services/fillings_2.png'],
         features: [
             'Seamless tooth-colored fillings',
@@ -58,7 +58,7 @@ const services = [
         title: 'Root Canal Treatment',
         icon: <Syringe className="w-8 h-8" />,
         description: 'Advanced procedures performed to remove infection and preserve natural teeth while relieving pain.',
-        details: 'Microscopic Root Canal ke zariye hum 100% precision ensure karte hain. Humare machines noiseless hain taaki aapko dar na lage aur hum maximum cases ko single-sitting me complete karne ki koshish karte hain, jisse aapka samay bachta hai.',
+        details: 'Our clinic specializes in microscopic endodontics, ensuring 100% precision during root canal treatments. We use advanced, noiseless electronic systems to ensure a stress-free experience, often completing the entire procedure in a single sitting for your convenience.',
         images: ['/services/rct_1.png', '/services/rct_2.png'],
         features: [
             'Single-sitting root canal treatment',
@@ -74,7 +74,7 @@ const services = [
         title: 'Cosmetic Dentistry',
         icon: <Sparkles className="w-8 h-8" />,
         description: 'Teeth whitening, smile designing, and veneers for an aesthetic smile correction and boost in confidence.',
-        details: 'Smile designing ke liye hum Digital Smile Design (DSD) software use karte hain, jisme aap result pehle hi dekh sakte hain. Veneers aur Whitening humare expert doctors karte hain taki aapko ek natural aur brilliant smile mil sake.',
+        details: 'Unlock your perfect smile with our Digital Smile Design (DSD) technology, allowing you to preview your results before the treatment begins. From professional laser whitening to ultra-thin porcelain veneers, we provide tailored aesthetic solutions to enhance your confidence.',
         images: ['/services/cosmetic_1.png', '/services/cosmetic_2.png'],
         features: [
             'Laser teeth whitening',
@@ -90,7 +90,7 @@ const services = [
         title: 'Braces & Clear Aligners',
         icon: <Activity className="w-8 h-8" />,
         description: 'Metal, ceramic braces, and invisible aligners for properly aligned teeth and improved bite.',
-        details: 'Hum invisible clear aligners me specialisation rakhte hain jo ki pehenne me bilkul comfortable aur dikhne me invisible hote hain. Monthly progress scanning se hum aapka treatment monitor karte hain taaki results jaldi aur perfect milein.',
+        details: 'We specialize in modern orthodontic solutions, including nearly invisible clear aligners that offer comfort and aesthetic discretion. Through monthly digital progress tracking, we ensure your journey to a perfectly aligned smile is efficient and precise.',
         images: ['/services/braces_1.png', '/services/braces_2.png'],
         features: [
             'Custom-made clear aligners',
@@ -106,7 +106,7 @@ const services = [
         title: 'Gum Treatment (Periodontal Care)',
         icon: <Droplets className="w-8 h-8" />,
         description: 'Scaling, root planing, and gum disease treatments to ensure your gums stay healthy and strong.',
-        details: 'Laser gum treatment ke zariye hum bina kisi bleeding ya pain ke masoodo ki bimari ko theek karte hain. Professional scaling aur deep root planing se hum masoodo ko majboot banate hain taaki aapke daant lifetime saath dein.',
+        details: 'Maintain healthy gums with our advanced laser therapy that eliminates disease without bleeding or discomfort. Our professional scaling and deep root planing procedures are designed to strengthen your gum health, ensuring a solid foundation for your teeth.',
         images: ['/services/gum_1.png', '/services/gum_2.png'],
         features: [
             'Advanced laser gum therapy',
@@ -122,7 +122,7 @@ const services = [
         title: 'Dental Implants',
         icon: <Bone className="w-8 h-8" />,
         description: 'Permanent replacement options for missing teeth that restore both function and appearance naturally.',
-        details: 'Hum globally recognized titanium implants use karte hain jo ki lifetime durability ke saath aate hain. Computer-guided surgery ki wajah se procedure fast, painless aur highly accurate hota hai, jisse healing bahut jaldi hoti hai.',
+        details: 'We utilize globally recognized titanium implants that offer lifelong durability and a natural appearance. Our computer-guided surgical techniques ensure high accuracy, a painless experience, and a significantly faster recovery time for our patients.',
         images: ['/services/implant_1.png', '/services/implant_2.png'],
         features: [
             'Precision computer-guided implants',
@@ -138,7 +138,7 @@ const services = [
         title: 'Tooth Extraction & Oral Surgery',
         icon: <Scissors className="w-8 h-8" />,
         description: 'Safe and comfortable surgical care including wisdom tooth removal and minor oral procedures.',
-        details: 'Humare yahan sterile atmosphere me painless extraction ki jaati hai. Wisdom tooth surgery expert oral surgeons dwara kam se kam discomfort aur special instruments ke saath ki jaati hai taaki aapka recovery fast ho.',
+        details: 'Our surgical procedures are performed in a strictly sterile environment utilizing painless extraction techniques. Whether it is a routine extraction or a complex wisdom tooth surgery, our specialists ensure minimal discomfort and a rapid recovery process.',
         images: ['/services/surgery_1.png', '/services/surgery_2.png'],
         features: [
             'Painless wisdom tooth removal',
@@ -154,7 +154,7 @@ const services = [
         title: 'Pediatric Dentistry (Kids Dental Care)',
         icon: <Baby className="w-8 h-8" />,
         description: 'Specialized dental check-ups and preventive care in a friendly environment tailored for children.',
-        details: 'Baccho ke liye humare pas colorful environment aur gentle specialists hain. Hum "No-Pain" policy follow karte hain aur treats aur rewards use karte hain taaki bacho ko dentist se darr na lage aur unki dental health hamesha bani rahe.',
+        details: 'We provide a vibrant and welcoming environment for children, supported by gentle pediatric specialists. Following a strict "No-Pain" policy and using positive reinforcement, we ensure that every child leaves with a healthy smile and a positive view of dental care.',
         images: ['/services/pediatric_1.png', '/services/pediatric_2.png'],
         features: [
             'Kid-friendly dental environment',

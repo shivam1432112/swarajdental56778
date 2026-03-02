@@ -49,12 +49,12 @@ export default function Navbar() {
                             priority
                         />
                     </div>
-                    <div className="flex flex-col font-[family-name:var(--font-outfit)]">
+                    <div className="flex flex-col">
                         <span className={cn(
                             "text-xl md:text-3xl font-bold tracking-tight transition-colors",
                             isScrolled ? "text-slate-950" : "text-slate-900"
                         )}>
-                            <span className="font-[family-name:var(--font-playfair)] italic">Swaraj</span> <span className="text-blue-600 font-bold uppercase transition-all">Dental</span>
+                            Swaraj <span className="text-blue-600 font-bold uppercase transition-all">Dental</span>
                         </span>
                         <div className="flex items-center space-x-1.5 md:space-x-2 -mt-0.5">
                             <div className="h-[1px] w-4 md:w-8 bg-blue-600/30 rounded-full" />

@@ -108,15 +108,15 @@ export default function About() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="grid grid-cols-3 gap-8 pt-10 border-t border-slate-200"
+                            className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-8 pt-10 border-t border-slate-200"
                         >
                             {stats.map((stat) => (
                                 <div key={stat.label} className="text-center group cursor-default">
-                                    <div className="mx-auto w-12 h-12 bg-white rounded-2xl shadow-md flex items-center justify-center mb-3 text-logo-blue group-hover:text-white group-hover:bg-logo-blue transition-all duration-300">
+                                    <div className="mx-auto w-10 h-10 md:w-12 md:h-12 bg-white rounded-xl md:rounded-2xl shadow-md flex items-center justify-center mb-3 text-blue-600 group-hover:text-white group-hover:bg-blue-600 transition-all duration-300">
                                         {stat.icon}
                                     </div>
-                                    <p className="text-2xl font-black text-slate-900 leading-none mb-1">{stat.value}</p>
-                                    <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
+                                    <p className="text-xl md:text-2xl font-black text-slate-900 leading-none mb-1">{stat.value}</p>
+                                    <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest leading-tight">{stat.label}</p>
                                 </div>
                             ))}
                         </motion.div>

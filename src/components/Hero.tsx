@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Phone, Calendar, ArrowRight, ShieldCheck, HeartPulse, Clock } from 'lucide-react';
+import { Phone, Calendar, ShieldCheck, HeartPulse, Clock, Sparkles, Star, Award } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -27,147 +27,124 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-screen pt-32 pb-20 overflow-hidden bg-slate-50">
-            {/* Decorative Background Elements */}
-            <div className="absolute top-0 right-0 w-1/3 h-1/2 bg-blue-100/50 rounded-bl-[100px] -z-10 blur-3xl opacity-50" />
-            <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-blue-200/40 rounded-tr-[100px] -z-10 blur-2xl opacity-40" />
+        <section className="relative min-h-[100svh] flex items-center pt-24 pb-16 lg:pt-32 lg:pb-32 overflow-hidden bg-white">
+            <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    {/* Hero Content */}
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="space-y-8 text-center lg:text-left order-2 lg:order-1"
+                    >
+                        <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
+                            <Sparkles size={14} className="animate-pulse" />
+                            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase italic">The Smile Experts</span>
+                        </motion.div>
 
-            <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-                {/* Hero Content */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="space-y-8"
-                >
-                    <motion.div variants={itemVariants} className="inline-flex items-center space-x-3 bg-logo-blue/10 pl-2 pr-4 py-2 rounded-full border border-logo-blue/20">
-                        <div className="w-8 h-8 relative rounded-full overflow-hidden bg-white shadow-sm ring-2 ring-logo-blue/20">
+                        <motion.div variants={itemVariants}>
+                            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-slate-950 leading-[1.1] lg:leading-[1] tracking-tight">
+                                Your <span className="font-[family-name:var(--font-playfair)] italic text-blue-700 font-bold">Smile</span>, <br className="hidden sm:block" />
+                                <span className="relative">
+                                    Our <span className="font-[family-name:var(--font-playfair)] italic text-blue-600 font-bold">Mission</span>
+                                    <svg className="absolute -bottom-2 md:-bottom-4 left-0 w-full" viewBox="0 0 400 20" fill="none" preserveAspectRatio="none">
+                                        <path d="M5 15C100 5 300 5 395 15" stroke="#2563EB" strokeWidth="4" strokeLinecap="round" strokeOpacity="0.3" />
+                                    </svg>
+                                </span>
+                            </h1>
+                        </motion.div>
+
+                        <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                            Experience world-class dental care with advanced technology and a gentle touch.
+                            From routine checkups to complex smile makeovers, we are here for you.
+                        </motion.p>
+
+                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                            <Link
+                                href="#appointment"
+                                className="w-full sm:w-auto bg-blue-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-blue-200 hover:bg-blue-700 hover:-translate-y-1 transition-all active:scale-95 group"
+                            >
+                                <span>Book Appointment</span>
+                                <Calendar className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                            </Link>
+
+                            <Link
+                                href="tel:+911234567890"
+                                className="w-full sm:w-auto bg-slate-50 text-blue-900 border border-slate-200 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all hover:bg-white hover:shadow-xl active:scale-95"
+                            >
+                                <Phone className="w-5 h-5 text-blue-600" />
+                                <span>Call Clinic</span>
+                            </Link>
+                        </motion.div>
+
+                        {/* Trust Badges - Optimized for Mobile */}
+                        <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-10 border-t border-slate-100">
+                            {[
+                                { icon: <ShieldCheck size={20} />, label: "Certified", sub: "Quality Guaranteed" },
+                                { icon: <HeartPulse size={20} />, label: "Painless", sub: "Modern Tech" },
+                                { icon: <Clock size={20} />, label: "24/7 Support", sub: "Always Available" }
+                            ].map((badge, i) => (
+                                <div key={i} className="flex items-center space-x-3 p-3 rounded-2xl bg-slate-50/50 lg:bg-transparent justify-center lg:justify-start">
+                                    <div className="p-2 bg-blue-100 rounded-xl text-blue-600">
+                                        {badge.icon}
+                                    </div>
+                                    <div className="flex flex-col text-left">
+                                        <span className="font-bold text-slate-900 uppercase text-[10px] tracking-wider">{badge.label}</span>
+                                        <span className="text-[10px] text-slate-500 font-medium">{badge.sub}</span>
+                                    </div>
+                                </div>
+                            ))}
+                        </motion.div>
+                    </motion.div>
+
+                    {/* Hero Image - Optimized for Mobile */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9, x: 50 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        className="relative group order-1 lg:order-2"
+                    >
+                        <div className="relative z-10 rounded-[40px] md:rounded-[60px] lg:rounded-[80px] overflow-hidden shadow-2xl shadow-blue-200/50 border-[8px] md:border-[12px] border-white max-w-[450px] mx-auto lg:max-w-none lg:ml-auto">
                             <Image
-                                src="/logo.png"
-                                alt="Swaraj Logo"
-                                fill
-                                className="object-contain p-0.5"
+                                src="/hero-dentist.png"
+                                alt="Professional Dentist - Swaraj Dental Clinic"
+                                width={600}
+                                height={750}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 priority
                             />
                         </div>
-                        <span className="text-logo-blue text-xs font-bold tracking-widest uppercase">Dental & Implant Excellence</span>
-                    </motion.div>
 
-                    <motion.div variants={itemVariants}>
-                        <h1 className="text-6xl lg:text-8xl font-medium text-slate-950 leading-[1] tracking-tight">
-                            Your <span className="font-[family-name:var(--font-playfair)] italic text-blue-700 font-bold">Smile</span>, <br />
-                            <span className="relative">
-                                Our <span className="font-[family-name:var(--font-playfair)] italic text-blue-600 font-bold">Mission</span>
-                                <svg className="absolute -bottom-4 left-0 w-full" viewBox="0 0 400 20" fill="none" preserveAspectRatio="none">
-                                    <path d="M5 15C100 5 300 5 395 15" stroke="#2563EB" strokeWidth="4" strokeLinecap="round" strokeOpacity="0.3" />
-                                </svg>
-                            </span>
-                        </h1>
-                    </motion.div>
-
-                    <motion.p variants={itemVariants} className="text-lg text-slate-600 max-w-lg leading-relaxed">
-                        Experience world-class dental care with advanced technology and a gentle touch.
-                        From routine checkups to complex smile makeovers, we are here for you.
-                    </motion.p>
-
-                    <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                        <Link
-                            href="#appointment"
-                            className="w-full sm:w-auto bg-logo-blue text-white px-8 py-4 rounded-2xl font-black flex items-center justify-center space-x-2 shadow-2xl shadow-logo-blue/30 hover:shadow-logo-blue/50 transition-all hover:-translate-y-1 active:scale-95 group"
+                        {/* Floating elements - Repositioned for Mobile */}
+                        <motion.div
+                            animate={{ y: [0, -15, 0] }}
+                            transition={{ duration: 4, repeat: Infinity }}
+                            className="absolute -top-4 -left-4 md:-top-10 md:-left-10 z-20 bg-white p-3 md:p-5 rounded-2xl md:rounded-[32px] shadow-2xl border border-slate-50 flex items-center space-x-3 md:space-x-4 max-w-[140px] md:max-w-none"
                         >
-                            <span>Book Appointment</span>
-                            <Calendar className="w-5 h-5 group-hover:rotate-12 transition-transform" />
-                        </Link>
+                            <div className="w-10 h-10 md:w-14 md:h-14 bg-blue-50 text-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center">
+                                <Star fill="currentColor" size={20} />
+                            </div>
+                            <div>
+                                <p className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest">Rating</p>
+                                <p className="font-black text-slate-900 text-sm md:text-xl leading-none">4.9/5 ★</p>
+                            </div>
+                        </motion.div>
 
-                        <Link
-                            href="tel:+911234567890"
-                            className="w-full sm:w-auto bg-white text-blue-900 border-2 border-slate-100 hover:border-blue-200 px-8 py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 transition-all hover:bg-slate-50 active:scale-95"
+                        <motion.div
+                            animate={{ y: [0, 15, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+                            className="absolute -bottom-4 -right-4 md:-bottom-10 md:-right-10 z-20 bg-white p-3 md:p-5 rounded-2xl md:rounded-[32px] shadow-2xl border border-slate-100 flex items-center space-x-3 md:space-x-4 max-w-[140px] md:max-w-none"
                         >
-                            <Phone className="w-5 h-5 text-blue-600" />
-                            <span>Call Now</span>
-                        </Link>
+                            <div className="w-10 h-10 md:w-14 md:h-14 bg-green-50 text-green-600 rounded-xl md:rounded-2xl flex items-center justify-center">
+                                <Award size={20} />
+                            </div>
+                            <div>
+                                <p className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest">Exp.</p>
+                                <p className="font-black text-slate-900 text-sm md:text-xl leading-none">15+ Yrs</p>
+                            </div>
+                        </motion.div>
                     </motion.div>
-
-                    {/* Trust Badges */}
-                    <motion.div variants={itemVariants} className="grid grid-cols-3 gap-6 pt-10 border-t border-slate-200">
-                        <div className="flex items-center space-x-3">
-                            <div className="p-2 bg-blue-100 rounded-lg">
-                                <ShieldCheck className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-slate-900 uppercase text-sm">Certified</span>
-                                <span className="text-xs text-slate-500">Industry Experts</span>
-                            </div>
-                        </div>
-                        <div className="flex items-center space-x-3 border-l pl-6 border-slate-200">
-                            <div className="p-2 bg-blue-100 rounded-lg">
-                                <HeartPulse className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-slate-900 uppercase text-sm">Painless</span>
-                                <span className="text-xs text-slate-500">Modern Tech</span>
-                            </div>
-                        </div>
-                        <div className="flex items-center space-x-3 border-l pl-6 border-slate-200">
-                            <div className="p-2 bg-blue-100 rounded-lg">
-                                <Clock className="w-6 h-6 text-blue-600" />
-                            </div>
-                            <div className="flex flex-col">
-                                <span className="font-bold text-slate-900 uppercase text-sm">24/7 Care</span>
-                                <span className="text-xs text-slate-500">Always On</span>
-                            </div>
-                        </div>
-                    </motion.div>
-                </motion.div>
-
-                {/* Hero Image */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9, x: 50 }}
-                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    className="relative group"
-                >
-                    <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl shadow-blue-200/50 border-[12px] border-white">
-                        <Image
-                            src="/hero-dentist.png"
-                            alt="Professional Dentist - Swaraj Dental Clinic"
-                            width={600}
-                            height={700}
-                            className="object-cover transition-transform duration-700 group-hover:scale-105"
-                            priority
-                        />
-                    </div>
-
-                    {/* Floating elements */}
-                    <motion.div
-                        animate={{
-                            y: [0, -20, 0],
-                            rotate: [0, 5, 0]
-                        }}
-                        transition={{ duration: 4, repeat: Infinity }}
-                        className="absolute -top-10 -left-10 z-20 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center space-x-4"
-                    >
-                        <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                            <ShieldCheck className="text-green-600" />
-                        </div>
-                        <div>
-                            <p className="text-xs text-slate-500">Patient Satisfaction</p>
-                            <p className="font-bold text-slate-900">99.9% Happy</p>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        animate={{
-                            y: [0, 20, 0],
-                            rotate: [0, -5, 0]
-                        }}
-                        transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-                        className="absolute -bottom-10 -right-10 z-20 bg-white p-5 rounded-3xl shadow-2xl border border-slate-100 text-center"
-                    >
-                        <p className="text-3xl font-black text-blue-600 leading-tight">15+</p>
-                        <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Years Experience</p>
-                    </motion.div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

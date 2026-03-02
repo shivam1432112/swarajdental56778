@@ -180,7 +180,7 @@ export default function Services() {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {services.map((service, index) => (
                         <motion.div
                             key={service.title}
@@ -189,32 +189,30 @@ export default function Services() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             onClick={() => setSelectedService(service)}
-                            className="group relative bg-slate-50 p-10 rounded-[32px] border border-slate-100 hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-100 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+                            className="group relative bg-slate-50 p-6 md:p-10 rounded-[32px] border border-slate-100 hover:border-blue-200 hover:bg-white hover:shadow-2xl hover:shadow-blue-100 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
                         >
                             <div className={cn(
-                                "w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-500 mb-8",
+                                "w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center transition-all duration-500 mb-6 md:mb-8",
                                 service.color,
                                 service.hoverColor
                             )}>
                                 {service.icon}
                             </div>
 
-                            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">
+                            <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-3 md:mb-4 group-hover:text-blue-700 transition-colors">
                                 {service.title}
                             </h3>
 
-                            <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
+                            <p className="text-sm md:text-base text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors">
                                 {service.description}
                             </p>
 
-                            <div className="mt-8 flex items-center text-sm font-bold text-blue-600 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0">
+                            <div className="mt-6 md:mt-8 flex items-center text-sm font-bold text-blue-600 opacity-0 group-hover:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0">
                                 <span>Learn More</span>
                                 <svg className="ml-2 w-4 h-4 translate-y-[1px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
                                 </svg>
                             </div>
-
-                            <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-blue-100 group-hover:scale-[4] opacity-0 group-hover:opacity-100 transition-all duration-500" />
                         </motion.div>
                     ))}
                 </div>
@@ -223,7 +221,7 @@ export default function Services() {
             {/* Service Detail Modal */}
             <AnimatePresence>
                 {selectedService && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 lg:p-8">
+                    <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4">
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -233,24 +231,25 @@ export default function Services() {
                         />
 
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                            className="relative w-full max-w-2xl bg-white rounded-[40px] shadow-2xl overflow-hidden"
+                            initial={{ opacity: 0, y: '100%' }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: '100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="relative w-full max-w-2xl bg-white rounded-t-[40px] sm:rounded-[40px] shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto"
                         >
                             {/* Modal Header */}
-                            <div className={cn("p-8 md:p-12 flex items-start justify-between", selectedService.color)}>
+                            <div className={cn("p-8 md:p-12 flex items-start justify-between relative", selectedService.color)}>
                                 <div className="space-y-4">
-                                    <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg">
+                                    <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg">
                                         {selectedService.icon}
                                     </div>
-                                    <h3 className="text-3xl md:text-4xl font-black text-slate-900">
+                                    <h3 className="text-2xl md:text-4xl font-black text-slate-900 leading-tight">
                                         {selectedService.title}
                                     </h3>
                                 </div>
                                 <button
                                     onClick={() => setSelectedService(null)}
-                                    className="p-2 bg-white/50 hover:bg-white rounded-full transition-colors text-slate-900"
+                                    className="p-2 bg-white/50 hover:bg-white rounded-full transition-colors text-slate-900 absolute top-6 right-6"
                                 >
                                     <X className="w-6 h-6" />
                                 </button>
@@ -258,40 +257,40 @@ export default function Services() {
 
                             {/* Modal Content */}
                             <div className="p-8 md:p-12 bg-white">
-                                <div className="space-y-8">
-                                    <p className="text-xl text-slate-600 leading-relaxed font-medium capitalize prose">
+                                <div className="space-y-6 md:space-y-8">
+                                    <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium">
                                         {selectedService.description}
                                     </p>
 
-                                    <div className="grid gap-4">
+                                    <div className="grid gap-3 md:gap-4">
                                         {selectedService.features.map((feature, i) => (
                                             <motion.div
                                                 initial={{ opacity: 0, x: -10 }}
                                                 animate={{ opacity: 1, x: 0 }}
                                                 transition={{ delay: i * 0.1 }}
                                                 key={i}
-                                                className="flex items-center space-x-3 group"
+                                                className="flex items-start space-x-3 group"
                                             >
-                                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mt-1">
                                                     <CheckCircle2 className="w-4 h-4" />
                                                 </div>
-                                                <span className="text-slate-700 font-medium">{feature}</span>
+                                                <span className="text-slate-700 font-medium text-sm md:text-base">{feature}</span>
                                             </motion.div>
                                         ))}
                                     </div>
 
-                                    <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
+                                    <div className="pt-6 md:pt-8 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
                                         <Link
                                             href="#appointment"
                                             onClick={() => setSelectedService(null)}
-                                            className="flex-1 bg-logo-blue text-white px-8 py-4 rounded-2xl font-black flex items-center justify-center space-x-2 shadow-xl shadow-logo-blue/20 hover:-translate-y-1 transition-all"
+                                            className="w-full bg-blue-600 text-white px-8 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center space-x-2 shadow-xl shadow-blue-200 hover:-translate-y-1 transition-all"
                                         >
                                             <Calendar className="w-5 h-5" />
                                             <span>Book Appointment</span>
                                         </Link>
                                         <Link
                                             href="tel:+911234567890"
-                                            className="flex-1 bg-slate-100 text-slate-900 px-8 py-4 rounded-2xl font-bold flex items-center justify-center space-x-2 hover:bg-slate-200 transition-all font-black"
+                                            className="w-full bg-slate-900 text-white px-8 py-4 md:py-5 rounded-2xl font-black flex items-center justify-center space-x-2 hover:bg-slate-800 transition-all shadow-lg shadow-slate-200"
                                         >
                                             <Phone className="w-5 h-5" />
                                             <span>Call Clinic</span>

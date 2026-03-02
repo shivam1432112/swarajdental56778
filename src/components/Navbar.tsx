@@ -38,8 +38,8 @@ export default function Navbar() {
             )}
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link href="/" className="flex items-center space-x-3 group animate-in fade-in slide-in-from-left duration-700">
-                    <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-transform group-hover:scale-110 bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden">
+                <Link href="/" className="flex items-center space-x-2 md:space-x-3 group animate-in fade-in slide-in-from-left duration-700">
+                    <div className="relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-transform group-hover:scale-110 bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden">
                         <Image
                             src="/logo.png"
                             alt="Swaraj Dental & Implant Center"
@@ -51,14 +51,14 @@ export default function Navbar() {
                     </div>
                     <div className="flex flex-col font-[family-name:var(--font-outfit)]">
                         <span className={cn(
-                            "text-2xl md:text-3xl font-bold tracking-tight transition-colors",
+                            "text-xl md:text-3xl font-bold tracking-tight transition-colors",
                             isScrolled ? "text-slate-950" : "text-slate-900"
                         )}>
                             <span className="font-[family-name:var(--font-playfair)] italic">Swaraj</span> <span className="text-blue-600 font-bold uppercase transition-all">Dental</span>
                         </span>
-                        <div className="flex items-center space-x-2 -mt-0.5">
-                            <div className="h-[1px] w-8 bg-blue-600/30 rounded-full" />
-                            <span className="text-[9px] md:text-[10.5px] font-medium uppercase tracking-[0.3em] text-slate-500">
+                        <div className="flex items-center space-x-1.5 md:space-x-2 -mt-0.5">
+                            <div className="h-[1px] w-4 md:w-8 bg-blue-600/30 rounded-full" />
+                            <span className="text-[7px] md:text-[10.5px] font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-slate-500">
                                 & Implant Center
                             </span>
                         </div>
@@ -66,62 +66,118 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center space-x-8">
+                <div className="hidden lg:flex items-center space-x-8">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-slate-600 hover:text-logo-blue font-bold transition-colors"
+                            className="text-slate-600 hover:text-blue-600 font-bold transition-colors text-sm"
                         >
                             {link.name}
                         </Link>
                     ))}
                     <Link
                         href="#appointment"
-                        className="bg-logo-blue hover:bg-logo-blue/90 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg shadow-logo-blue/20 hover:shadow-logo-blue/30 active:scale-95"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300 active:scale-95"
                     >
                         Book Appointment
                     </Link>
                 </div>
 
-                {/* Mobile Toggle */}
-                <button
-                    className="md:hidden p-2 text-slate-600"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
+                {/* Mobile Toggle & Call Action */}
+                <div className="flex items-center space-x-2 lg:hidden">
+                    <Link
+                        href="tel:+911234567890"
+                        className="p-2.5 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 transition-colors"
+                    >
+                        <Phone size={20} />
+                    </Link>
+                    <button
+                        className="p-2.5 text-slate-900 bg-white shadow-sm border border-slate-100 rounded-full active:scale-90 transition-transform"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    >
+                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Premium Mobile Menu */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-t border-slate-100 mt-4 rounded-2xl shadow-xl overflow-hidden"
-                    >
-                        <div className="flex flex-col p-6 space-y-4">
-                            {navLinks.map((link) => (
+                    <>
+                        {/* Backdrop Overlay */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[60] bg-slate-950/20 backdrop-blur-sm lg:hidden"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                        />
+
+                        <motion.div
+                            initial={{ opacity: 0, x: '100%' }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: '100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed top-0 right-0 bottom-0 z-[70] w-full max-w-[320px] lg:hidden bg-white/90 backdrop-blur-3xl flex flex-col shadow-[-20px_0_50px_rgba(0,0,0,0.1)] border-l border-white/20"
+                        >
+                            <div className="flex items-center justify-between p-6 border-b border-slate-100/50">
+                                <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
+                                    <div className="w-8 h-8 bg-white rounded-lg shadow-sm flex items-center justify-center p-1 border border-slate-100">
+                                        <Image src="/logo.png" alt="Logo" width={24} height={24} />
+                                    </div>
+                                    <span className="font-black text-slate-900 text-sm tracking-tight uppercase">Swaraj Dental</span>
+                                </Link>
+                                <button
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="p-3 bg-slate-100/80 hover:bg-slate-200 text-slate-900 rounded-full transition-colors active:scale-90"
+                                >
+                                    <X size={20} />
+                                </button>
+                            </div>
+
+                            <div className="flex-1 overflow-y-auto px-8 py-10 space-y-8">
+                                {navLinks.map((link, idx) => (
+                                    <motion.div
+                                        key={link.name}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.1 + idx * 0.05 }}
+                                    >
+                                        <Link
+                                            href={link.href}
+                                            className="text-3xl font-black text-slate-900 hover:text-blue-600 transition-colors flex items-center group"
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            <span className="w-0 h-1 bg-blue-600 mr-0 group-hover:w-4 group-hover:mr-3 transition-all rounded-full" />
+                                            {link.name}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            <div className="p-8 space-y-4 bg-slate-50/50 border-t border-slate-100/50">
                                 <Link
-                                    key={link.name}
-                                    href={link.href}
-                                    className="text-slate-600 hover:text-blue-600 font-medium text-lg"
+                                    href="#appointment"
+                                    className="w-full bg-blue-600 text-white px-6 py-4 rounded-2xl font-black text-center block shadow-xl shadow-blue-200 hover:bg-blue-700 active:scale-[0.98] transition-all"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
-                                    {link.name}
+                                    Book Appointment
                                 </Link>
-                            ))}
-                            <Link
-                                href="#appointment"
-                                className="bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold text-center"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                            >
-                                Book Appointment
-                            </Link>
-                        </div>
-                    </motion.div>
+                                <Link
+                                    href="tel:+911234567890"
+                                    className="w-full bg-slate-900 text-white px-6 py-4 rounded-2xl font-black text-center flex items-center justify-center space-x-3 active:scale-[0.98] transition-all group"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                                        <Phone size={18} />
+                                    </div>
+                                    <span className="text-sm">Call Our Clinic</span>
+                                </Link>
+                                <p className="text-[10px] text-center font-bold text-slate-400 tracking-[0.2em] uppercase pt-2">Available 24/7 for Emergencies</p>
+                            </div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </nav>

@@ -87,7 +87,7 @@ export default function Hero() {
                     >
                         <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
                             <Sparkles size={14} className="animate-pulse" />
-                            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase italic">The Smile Experts</span>
+                            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase italic">Trusted Care for Every Smile</span>
                         </motion.div>
 
                         <motion.div variants={itemVariants}>
@@ -103,8 +103,7 @@ export default function Hero() {
                         </motion.div>
 
                         <motion.p variants={itemVariants} className="text-base sm:text-lg md:text-xl text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                            Experience world-class dental care with advanced technology and a gentle touch.
-                            From routine checkups to complex smile makeovers, we are here for you.
+                            From routine check-ups to advanced implant treatments, we deliver painless, precise, and personalized dental care using the latest technology.
                         </motion.p>
 
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
@@ -192,7 +191,7 @@ export default function Hero() {
                             </div>
                             <div>
                                 <p className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest">Exp.</p>
-                                <p className="font-black text-slate-900 text-sm md:text-xl leading-none">15+ Yrs</p>
+                                <p className="font-black text-slate-900 text-sm md:text-xl leading-none">11+ Yrs</p>
                             </div>
                         </motion.div>
                     </motion.div>

@@ -6,111 +6,110 @@ import { X, CheckCircle2, ChevronRight, CalendarClock } from 'lucide-react';
 import Link from 'next/link';
 
 const ImplantsIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M26 20C26 12 28 8 32 8C36 8 38 12 38 20C38 28 44 32 44 40C44 48 38 52 32 52C26 52 20 48 20 40C20 32 26 28 26 20Z" />
-        <path d="M32 52V60" />
-        <path d="M28 55H36" />
-        <path d="M28 58H36" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M22 28 C20 18 28 14 32 18 C36 14 44 18 42 28 C40 34 38 36 32 36 C26 36 24 34 22 28 Z" />
+        <path d="M28 40 L28 54 L32 58 L36 54 L36 40" />
+        <path d="M26 43 H38 M26 47 H38 M26 51 H38" />
+        <path d="M30 36 V40 M34 36 V40" />
     </svg>
 );
 
 const SmileIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 32C16 32 24 48 32 48C40 48 48 32 48 32" />
-        <path d="M16 32C24 35 40 35 48 32" />
-        <path d="M8 20L12 24M12 20L8 24" />
-        <path d="M52 20L56 24M56 20L52 24" />
-        <path d="M12 40L16 44M16 40L12 44" />
-        <path d="M48 40L52 44M52 40L48 44" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M12 32 C24 28 40 28 52 32 C40 44 24 44 12 32 Z" />
+        <path d="M12 32 C24 34 40 34 52 32" />
+        <path d="M32 30 V33 M26 30 V33 M38 30 V33 M20 31 V32 M44 31 V32" />
     </svg>
 );
 
 const LaserIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M26 24C26 16 28 12 32 12C36 12 38 16 38 24C38 32 44 36 44 44C44 52 38 56 32 56C26 56 20 52 20 44C20 36 26 32 26 24Z" />
-        <path d="M8 8L30 30" stroke="#1E6FB4" strokeWidth="3" />
-        <circle cx="30" cy="30" r="3" fill="#1E6FB4" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M22 28 C20 18 28 14 32 18 C36 14 44 18 42 28 C40 38 38 40 38 46 C38 52 35 52 34 46 C33 42 31 42 30 46 C29 52 26 52 26 46 C26 40 24 38 22 28 Z" />
+        <path d="M58 6 L48 16 M54 4 L60 10 M50 8 L56 14" />
+        <path d="M48 16 L38 26" strokeDasharray="3 3" />
+        <path d="M34 26 H42 M38 22 V30 Z" />
     </svg>
 );
 
 const RehabIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 32H48" />
-        <path d="M20 32C20 20 28 16 32 16C36 16 44 20 44 32" />
-        <path d="M20 32C20 44 28 48 32 48C36 48 44 44 44 32" />
-        <path d="M32 4C16.5 4 4 16.5 4 32C4 47.5 16.5 60 32 60C47.5 60 60 47.5 60 32" strokeDasharray="4 4" />
-        <path d="M56 28L60 32L64 28" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M16 30 C16 14 24 10 32 10 C40 10 48 14 48 30" />
+        <path d="M16 38 C16 54 24 58 32 58 C40 58 48 54 48 38" />
+        <circle cx="16" cy="34" r="2" />
+        <circle cx="48" cy="34" r="2" />
+        <path d="M10 34 H54" strokeDasharray="4 4" />
     </svg>
 );
 
 const CrownIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 48V24L24 32L32 16L40 32L48 24V48H16Z" />
-        <path d="M16 44H48" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M20 44 L18 28 C16 20 24 16 32 20 C40 16 48 20 46 28 L44 44 C40 48 24 48 20 44 Z" />
+        <path d="M20 44 C26 42 38 42 44 44" />
+        <path d="M26 22 C32 28 32 28 32 36 M38 22 C32 28 32 28 32 36" />
+        <path d="M32 56 V48 M28 52 L32 48 L36 52" />
     </svg>
 );
 
 const RctIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M24 16C24 8 28 4 32 4C36 4 40 8 40 16C40 24 48 28 48 40C48 52 40 60 32 60C24 60 16 52 16 40C16 28 24 24 24 16Z" />
-        <path d="M28 60C28 50 32 45 32 30" strokeDasharray="2 2" />
-        <path d="M36 60C36 50 32 45 32 30" strokeDasharray="2 2" />
-        <path d="M32 16V24" strokeWidth="3" />
-        <path d="M28 20H36" strokeWidth="3" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M22 28 C20 18 28 14 32 18 C36 14 44 18 42 28 C40 38 38 40 38 46 C38 52 35 52 34 46 C33 42 31 42 30 46 C29 52 26 52 26 46 C26 40 24 38 22 28 Z" />
+        <path d="M29 4 H35 V10 H29 Z" />
+        <path d="M32 10 V46" />
+        <path d="M30 20 H34 M30 24 H34 M30 28 H34 M30 32 H34 M30 36 H34" />
     </svg>
 );
 
 const ChildIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M26 24C26 16 28 12 32 12C36 12 38 16 38 24C38 32 44 36 44 44C44 52 38 56 32 56C26 56 20 52 20 44C20 36 26 32 26 24Z" />
-        <path d="M32 36C32 36 36 32 36 28C36 26 34 24 32 26C30 24 28 26 28 28C28 32 32 36 32 36Z" fill="#1E6FB4" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M28 28 C26 18 34 14 38 18 C42 14 50 18 48 28 C46 38 44 40 44 46 C44 52 41 52 40 46 C39 42 37 42 36 46 C35 52 32 52 32 46 C32 40 30 38 28 28 Z" />
+        <path d="M12 40 C10 34 16 30 20 32 C24 30 30 34 28 40 C27 46 26 48 26 52 C26 56 24 56 23 52 C22 48 20 48 19 52 C18 56 16 56 16 52 C16 48 13 46 12 40 Z" />
+        <path d="M20 16 H24 M22 14 V18" />
     </svg>
 );
 
 const GumIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M26 16C26 8 28 4 32 4C36 4 40 8 40 16C40 24 48 28 48 40C48 52 40 60 32 60C24 60 16 52 16 40C16 28 24 24 24 16Z" />
-        <path d="M12 40C12 40 22 36 32 36C42 36 52 40 52 40" />
-        <path d="M48 16L58 16V24C58 32 48 36 48 36C48 36 38 32 38 24V16L48 16Z" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M22 28 C20 18 28 14 32 18 C36 14 44 18 42 28 C40 38 38 40 38 46 L36 50 C36 54 32 54 32 50 L32 44 L32 50 C32 54 28 54 28 50 L26 46 C26 40 24 38 22 28 Z" />
+        <path d="M10 40 C18 34 24 38 32 38 C40 38 46 34 54 40" />
+        <path d="M26 40 V50 M38 40 V50" strokeDasharray="2 2" />
+        <path d="M48 10 L38 38 M44 20 L46 22 M42 26 L44 28 M40 32 L42 34" />
     </svg>
 );
 
 const BracesIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 32H52" />
-        <path d="M16 32C16 20 24 16 32 16C40 16 48 20 48 32" />
-        <path d="M16 32C16 44 24 48 32 48C40 48 48 44 48 32" />
-        <rect x="20" y="28" width="6" height="8" rx="1" />
-        <rect x="30" y="28" width="6" height="8" rx="1" />
-        <rect x="40" y="28" width="6" height="8" rx="1" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M22 28 C20 18 28 14 32 18 C36 14 44 18 42 28 C40 38 38 40 38 46 C38 52 35 52 34 46 C33 42 31 42 30 46 C29 52 26 52 26 46 C26 40 24 38 22 28 Z" />
+        <path d="M12 28 C20 26 44 26 52 28" />
+        <path d="M28 25 H36 V31 H28 Z M28 28 H36 M32 25 V31" />
     </svg>
 );
 
 const AlignersIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 40C12 24 20 16 32 16C44 16 52 24 52 40" strokeDasharray="4 4" />
-        <path d="M16 40C16 28 24 24 32 24C40 24 48 28 48 40" strokeDasharray="4 4" />
-        <path d="M12 40C12 44 20 48 32 48C44 48 52 44 52 40" strokeDasharray="4 4" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M16 48 C16 28 24 16 32 16 C40 16 48 28 48 48" />
+        <path d="M16 48 C24 44 40 44 48 48" />
+        <path d="M12 42 C12 20 22 10 32 10 C42 10 52 20 52 42" strokeDasharray="3 3" />
+        <path d="M12 42 C22 38 42 38 52 42" strokeDasharray="3 3" />
+        <path d="M32 20 V16 M18 38 V34 M46 38 V34" />
     </svg>
 );
 
 const SnoringIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="32" cy="32" r="24" />
-        <path d="M20 28L28 28L20 36L28 36" />
-        <path d="M36 24L44 24L36 32L44 32" />
-        <path d="M24 44C24 44 28 48 32 48C36 48 40 44 40 44" />
-        <path d="M48 16L56 16L48 24L56 24" />
-        <path d="M44 12L60 28M60 12L44 28" strokeWidth="1" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M20 12 C28 12 32 18 32 24 L30 32 L32 34 C36 34 38 42 32 46 L30 50 C30 56 32 60 36 64" />
+        <path d="M10 24 C16 24 20 20 20 16" strokeDasharray="2 3" />
+        <path d="M10 40 C18 40 22 42 22 48" strokeDasharray="2 3" />
+        <path d="M28 40 H36" />
+        <path d="M42 20 H50 L42 28 H50 M52 32 H56 L52 36 H56" />
     </svg>
 );
 
 const DigitalIcon = () => (
-    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#1E6FB4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M26 24C26 16 28 12 32 12C36 12 38 16 38 24C38 32 44 36 44 44C44 52 38 56 32 56C26 56 20 52 20 44C20 36 26 32 26 24Z" />
-        <path d="M12 12L52 52" strokeDasharray="2 4" />
-        <path d="M12 52L52 12" strokeDasharray="2 4" />
-        <rect x="8" y="8" width="48" height="48" rx="8" strokeDasharray="4 4" />
+    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1E6FB4]">
+        <path d="M16 24 V16 H24 M48 24 V16 H40 M16 40 V48 H24 M48 40 V48 H40" />
+        <path d="M22 28 C20 18 28 14 32 18 C36 14 44 18 42 28 C40 38 38 40 38 46 C38 52 35 52 34 46 C33 42 31 42 30 46 C29 52 26 52 26 46 C26 40 24 38 22 28 Z" />
+        <path d="M32 16 V52" strokeDasharray="1 3" />
+        <path d="M22 28 H42 M26 46 H38" strokeDasharray="1 3" />
     </svg>
 );
 
@@ -443,7 +442,7 @@ export default function Services() {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-black text-slate-900"
                     >
-                        Swaraj Dental <span className="text-[#1E6FB4]">Services</span>
+                        Our <span className="text-[#1E6FB4]">Services</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
@@ -557,12 +556,14 @@ export default function Services() {
 
                             <div className="p-6 sm:p-8 bg-white border-t border-slate-100 mt-auto flex-shrink-0">
                                 <Link
-                                    href="#appointment"
+                                    href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20an%20appointment."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     onClick={() => setSelectedService(null)}
                                     className="w-full bg-[#1E6FB4] text-white px-8 py-4 rounded-xl font-bold text-center flex items-center justify-center space-x-2 shadow-lg shadow-blue-200 hover:bg-blue-700 hover:-translate-y-0.5 transition-all active:scale-[0.98]"
                                 >
                                     <CalendarClock className="w-5 h-5" />
-                                    <span>Book Appointment at Swaraj Dental and Implant Center</span>
+                                    <span>Book Appointment</span>
                                 </Link>
                             </div>
                         </motion.div>

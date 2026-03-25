@@ -54,7 +54,7 @@ export default function Navbar() {
                             <span className={cn(
                                 "text-xl md:text-3xl font-bold tracking-tight transition-colors text-black"
                             )}>
-                                Swaraj <span className="font-bold uppercase transition-all">Dental</span>
+                                Swaraj Dental
                             </span>
                             <div className="flex items-center -mt-0.5">
                                 <span className="text-[7px] md:text-[10.5px] font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-black">
@@ -130,7 +130,7 @@ export default function Navbar() {
                                     <div className="w-8 h-8 bg-white rounded-lg shadow-sm flex items-center justify-center p-1 border border-slate-100">
                                         <Image src="/logo.png" alt="Logo" width={24} height={24} />
                                     </div>
-                                    <span className="font-black text-black text-sm tracking-tight uppercase">Swaraj Dental</span>
+                                    <span className="font-black text-black text-sm tracking-tight">Swaraj Dental</span>
                                 </Link>
                                 <button
                                     onClick={() => setIsMobileMenuOpen(false)}

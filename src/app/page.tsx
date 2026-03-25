@@ -8,7 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import AppointmentForm from '@/components/AppointmentForm';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-
+import WhatsAppButton from '@/components/WhatsAppButton';
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
@@ -22,6 +22,7 @@ export default function Home() {
       <AppointmentForm />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }

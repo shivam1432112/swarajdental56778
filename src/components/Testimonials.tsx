@@ -1,93 +1,127 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Star, Quote, Heart } from 'lucide-react';
+import { Star, Quote } from 'lucide-react';
 
 const testimonials = [
     {
-        name: "Rajesh Kumar",
-        role: "Happy Patient",
-        review: "The staff at Swaraj Dental is incredibly professional and friendly. My dental implant procedure was virtually painless, and the results are amazing. Highly recommended!",
-        rating: 5,
-        avatar: "/api/placeholder/100/100"
+        name: "Nitin Borde",
+        review: "Dr. Wagh explained everything clearly and made me feel comfortable. Very gentle, caring, and professional. Clean and well-organized clinic.",
+        rating: 5
     },
     {
-        name: "Sneha Patil",
-        role: "Regular Patient",
-        review: "I have been coming here for 3 years now. The clinic is always spotless, and they use the latest technology. Dr. Swaraj is very gentle and explains everything thoroughly.",
-        rating: 5,
-        avatar: "/api/placeholder/100/100"
+        name: "Rutuja Bhokare",
+        review: "Excellent dental surgery experience. Completely painless procedure with smooth recovery. Highly recommended.",
+        rating: 5
     },
     {
-        name: "Amit Sharma",
-        role: "Braces Patient",
-        review: "Excellent orthodontic treatment. My clear aligners are working perfectly, and the pricing was very transparent compared to other clinics. Great experience!",
-        rating: 5,
-        avatar: "/api/placeholder/100/100"
+        name: "Riddhi Siddhi Anbhule",
+        review: "Very clean and hygienic clinic. Staff and doctor are polite and friendly. Treatment was done perfectly.",
+        rating: 5
+    },
+    {
+        name: "Pratik Kakde",
+        review: "Highly skilled doctor with modern equipment. Great patient care and excellent treatment at a fair price.",
+        rating: 5
+    },
+    {
+        name: "Gaurav Rajput",
+        review: "Wisdom tooth extraction was painless and smooth. Doctor handled everything calmly. Highly recommended in the area.",
+        rating: 5
+    },
+    {
+        name: "Vaishali Nipunge",
+        review: "Amazing experience. I was very anxious, but the doctor was gentle and made the treatment painless.",
+        rating: 5
+    },
+    {
+        name: "Hemant Dole",
+        review: "Felt very relaxed during treatment. Doctor’s precision and knowledge are impressive. Must visit clinic.",
+        rating: 5
+    },
+    {
+        name: "Yogita Jangle",
+        review: "Very polite and professional doctor. Treatment was smooth and painless. Highly recommended.",
+        rating: 5
     }
 ];
 
 export default function Testimonials() {
     return (
-        <section id="testimonials" className="py-16 md:py-32 bg-white relative overflow-hidden">
+        <section id="testimonials" className="py-20 md:py-32 bg-slate-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-12 md:mb-24 space-y-4">
+                
+                {/* Headers */}
+                <div className="text-center mb-16 md:mb-24 space-y-4">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="inline-block bg-blue-50 text-blue-700 font-bold px-4 py-1.5 rounded-full text-[10px] md:text-xs uppercase tracking-widest border border-blue-100"
+                        className="inline-block bg-blue-100/50 text-[#1E6FB4] font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest border border-blue-100"
                     >
-                        Testimonials
+                        Trusted by 60+ Happy Patients
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl md:text-5xl font-black text-slate-900 leading-tight"
+                        className="text-4xl md:text-5xl font-black text-slate-900 leading-tight"
                     >
-                        What Our Patients <span className="text-blue-600">Say</span>
+                        What Our Patients <span className="text-[#1E6FB4]">Say</span>
                     </motion.h2>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-slate-600 text-lg max-w-2xl mx-auto"
+                    >
+                        Read authentic reviews from our patients who have experienced our world-class, painless dental treatments firsthand.
+                    </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+                {/* Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {testimonials.map((testi, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: index * 0.15 }}
-                            className="bg-slate-50 p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-slate-100 hover:border-blue-200 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-100 relative group"
+                            transition={{ delay: index * 0.1, duration: 0.5 }}
+                            className="bg-white p-8 md:p-10 rounded-3xl border border-slate-100 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_-10px_rgba(30,111,180,0.15)] transition-all duration-300 hover:-translate-y-1 relative group flex flex-col h-full"
                         >
-                            <div className="absolute -top-4 -left-2 bg-blue-600 text-white p-2.5 rounded-xl shadow-xl shadow-blue-200 transform group-hover:-rotate-12 transition-transform">
-                                <Quote size={20} fill="currentColor" />
+                            {/* Quote Icon */}
+                            <div className="absolute top-6 right-8 text-slate-100 group-hover:text-blue-50 transition-colors duration-300">
+                                <Quote size={60} className="fill-current transform rotate-180" />
                             </div>
 
-                            <div className="flex space-x-1 mb-6">
+                            {/* Ratings */}
+                            <div className="flex space-x-1 mb-6 relative z-10">
                                 {[...Array(testi.rating)].map((_, i) => (
-                                    <Star key={i} size={14} className="fill-blue-500 text-blue-500" />
+                                    <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
                                 ))}
                             </div>
 
-                            <p className="text-slate-600 italic text-base md:text-lg leading-relaxed mb-8">
+                            {/* Review Content */}
+                            <p className="text-slate-700 font-medium text-[15px] md:text-base leading-relaxed mb-8 relative z-10 flex-grow">
                                 "{testi.review}"
                             </p>
 
-                            <div className="flex items-center space-x-4">
-                                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-200 rounded-full overflow-hidden border-4 border-white shadow-md">
-                                    <div className="w-full h-full flex items-center justify-center bg-blue-100 text-blue-600 font-bold text-sm">
-                                        {testi.name[0]}
-                                    </div>
+                            {/* Author Info */}
+                            <div className="flex items-center space-x-4 mt-auto relative z-10 pt-6 border-t border-slate-50">
+                                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-[#1E6FB4] font-black text-xl border border-blue-100 flex-shrink-0">
+                                    {testi.name.charAt(0)}
                                 </div>
                                 <div>
-                                    <h4 className="font-black text-slate-900 leading-none mb-1 text-sm md:text-base">{testi.name}</h4>
-                                    <p className="text-[10px] md:text-xs font-bold text-blue-600 uppercase tracking-widest">{testi.role}</p>
+                                    <h4 className="font-bold text-slate-900 text-base">{testi.name}</h4>
+                                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mt-0.5">Verified Patient</p>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
+                
             </div>
         </section>
     );

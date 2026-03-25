@@ -29,77 +29,81 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav
-            className={cn(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-                isScrolled
-                    ? 'bg-white/80 backdrop-blur-lg shadow-md py-3'
-                    : 'bg-transparent'
-            )}
-        >
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <Link href="/" className="flex items-center space-x-2 md:space-x-3 group animate-in fade-in slide-in-from-left duration-700">
-                    <div className="relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-transform group-hover:scale-110 bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden">
-                        <Image
-                            src="/logo.png"
-                            alt="Swaraj Dental & Implant Center"
-                            width={56}
-                            height={56}
-                            className="object-contain p-1"
-                            priority
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <span className={cn(
-                            "text-xl md:text-3xl font-bold tracking-tight transition-colors",
-                            isScrolled ? "text-slate-950" : "text-slate-900"
-                        )}>
-                            Swaraj <span className="text-blue-600 font-bold uppercase transition-all">Dental</span>
-                        </span>
-                        <div className="flex items-center space-x-1.5 md:space-x-2 -mt-0.5">
-                            <div className="h-[1px] w-4 md:w-8 bg-blue-600/30 rounded-full" />
-                            <span className="text-[7px] md:text-[10.5px] font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-slate-500">
-                                & Implant Center
-                            </span>
+        <>
+            <nav
+                className={cn(
+                    'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
+                    isScrolled
+                        ? 'bg-white/80 backdrop-blur-lg shadow-md py-3'
+                        : 'bg-transparent'
+                )}
+            >
+                <div className="max-w-7xl mx-auto flex items-center justify-between">
+                    <Link href="/" className="flex items-center space-x-2 md:space-x-3 group animate-in fade-in slide-in-from-left duration-700">
+                        <div className="relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-transform group-hover:scale-110 bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden">
+                            <Image
+                                src="/logo.png"
+                                alt="Swaraj Dental & Implant Center"
+                                width={56}
+                                height={56}
+                                className="object-contain p-1"
+                                priority
+                            />
                         </div>
-                    </div>
-                </Link>
+                        <div className="flex flex-col">
+                            <span className={cn(
+                                "text-xl md:text-3xl font-bold tracking-tight transition-colors text-black"
+                            )}>
+                                Swaraj <span className="font-bold uppercase transition-all">Dental</span>
+                            </span>
+                            <div className="flex items-center -mt-0.5">
+                                <span className="text-[7px] md:text-[10.5px] font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-black">
+                                    & Implant Center
+                                </span>
+                            </div>
+                        </div>
+                    </Link>
 
-                {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center space-x-8">
-                    {navLinks.map((link) => (
+                    {/* Desktop Menu */}
+                    <div className="hidden lg:flex items-center space-x-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                href={link.href}
+                                className="text-slate-600 hover:text-blue-600 font-bold transition-colors text-sm"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
                         <Link
-                            key={link.name}
-                            href={link.href}
-                            className="text-slate-600 hover:text-blue-600 font-bold transition-colors text-sm"
+                            href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20a%20dental%20appointment."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300 active:scale-95"
                         >
-                            {link.name}
+                            Book Appointment
                         </Link>
-                    ))}
-                    <Link
-                        href="#appointment"
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300 active:scale-95"
-                    >
-                        Book Appointment
-                    </Link>
-                </div>
+                    </div>
 
-                {/* Mobile Toggle & Call Action */}
-                <div className="flex items-center space-x-2 lg:hidden">
-                    <Link
-                        href="tel:+911234567890"
-                        className="p-2.5 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 transition-colors"
-                    >
-                        <Phone size={20} />
-                    </Link>
-                    <button
-                        className="p-2.5 text-slate-900 bg-white shadow-sm border border-slate-100 rounded-full active:scale-90 transition-transform"
-                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    >
-                        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                    {/* Mobile Toggle & Call Action */}
+                    <div className="flex items-center space-x-2 lg:hidden">
+                        <Link
+                            href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20a%20dental%20appointment."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2.5 bg-blue-50 text-blue-600 rounded-full hover:bg-blue-100 transition-colors"
+                        >
+                            <Phone size={20} />
+                        </Link>
+                        <button
+                            className="p-2.5 text-slate-900 bg-white shadow-sm border border-slate-100 rounded-full active:scale-90 transition-transform"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        >
+                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </nav>
 
             {/* Premium Mobile Menu */}
             <AnimatePresence>
@@ -119,14 +123,14 @@ export default function Navbar() {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: '100%' }}
                             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                            className="fixed top-0 right-0 bottom-0 z-[70] w-full max-w-[320px] lg:hidden bg-white/90 backdrop-blur-3xl flex flex-col shadow-[-20px_0_50px_rgba(0,0,0,0.1)] border-l border-white/20"
+                            className="fixed top-0 right-0 bottom-0 z-[70] w-full max-w-[320px] lg:hidden bg-white/95 backdrop-blur-3xl flex flex-col shadow-2xl border-l border-white/20 overflow-hidden"
                         >
-                            <div className="flex items-center justify-between p-6 border-b border-slate-100/50">
+                            <div className="flex flex-shrink-0 items-center justify-between p-6 border-b border-slate-100/50">
                                 <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
                                     <div className="w-8 h-8 bg-white rounded-lg shadow-sm flex items-center justify-center p-1 border border-slate-100">
                                         <Image src="/logo.png" alt="Logo" width={24} height={24} />
                                     </div>
-                                    <span className="font-black text-slate-900 text-sm tracking-tight uppercase">Swaraj Dental</span>
+                                    <span className="font-black text-black text-sm tracking-tight uppercase">Swaraj Dental</span>
                                 </Link>
                                 <button
                                     onClick={() => setIsMobileMenuOpen(false)}
@@ -136,7 +140,7 @@ export default function Navbar() {
                                 </button>
                             </div>
 
-                            <div className="flex-1 overflow-y-auto px-8 py-10 space-y-8">
+                            <div className="flex-1 overflow-y-auto px-8 py-10 space-y-6">
                                 {navLinks.map((link, idx) => (
                                     <motion.div
                                         key={link.name}
@@ -146,7 +150,7 @@ export default function Navbar() {
                                     >
                                         <Link
                                             href={link.href}
-                                            className="text-3xl font-black text-slate-900 hover:text-blue-600 transition-colors flex items-center group"
+                                            className="text-2xl sm:text-3xl font-black text-slate-900 hover:text-blue-600 transition-colors flex items-center group py-2"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
                                             <span className="w-0 h-1 bg-blue-600 mr-0 group-hover:w-4 group-hover:mr-3 transition-all rounded-full" />
@@ -156,23 +160,27 @@ export default function Navbar() {
                                 ))}
                             </div>
 
-                            <div className="p-8 space-y-4 bg-slate-50/50 border-t border-slate-100/50">
+                            <div className="flex flex-shrink-0 flex-col p-8 space-y-4 bg-slate-50/80 border-t border-slate-100/50">
                                 <Link
-                                    href="#appointment"
+                                    href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20a%20dental%20appointment."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-full bg-blue-600 text-white px-6 py-4 rounded-2xl font-black text-center block shadow-xl shadow-blue-200 hover:bg-blue-700 active:scale-[0.98] transition-all"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     Book Appointment
                                 </Link>
                                 <Link
-                                    href="tel:+911234567890"
+                                    href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20a%20dental%20appointment."
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="w-full bg-slate-900 text-white px-6 py-4 rounded-2xl font-black text-center flex items-center justify-center space-x-3 active:scale-[0.98] transition-all group"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                 >
                                     <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
                                         <Phone size={18} />
                                     </div>
-                                    <span className="text-sm">Call Our Clinic</span>
+                                    <span className="text-sm">Call Clinic</span>
                                 </Link>
                                 <p className="text-[10px] text-center font-bold text-slate-400 tracking-[0.2em] uppercase pt-2">Available 24/7 for Emergencies</p>
                             </div>
@@ -180,6 +188,6 @@ export default function Navbar() {
                     </>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 }

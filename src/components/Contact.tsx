@@ -44,13 +44,13 @@ export default function Contact() {
                                     label: 'Clinic Address',
                                     info: 'Swaraj Dental, Opp. Post Office, Main Road, City',
                                     icon: <MapPin className="text-blue-600" />,
-                                    link: 'https://maps.google.com'
+                                    link: 'https://maps.app.goo.gl/DUwTX7ury4FCpp9YA'
                                 },
                                 {
                                     label: 'Phone Number',
-                                    info: '+91 98765 43210',
+                                    info: '+91 9021748601',
                                     icon: <Phone className="text-blue-600" />,
-                                    link: 'tel:+919876543210'
+                                    link: 'tel:+919021748601'
                                 },
                                 {
                                     label: 'Email Address',
@@ -105,7 +105,7 @@ export default function Contact() {
                     >
                         <div className="absolute inset-0 bg-slate-200 grayscale-0 transition-all duration-700">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15282225.79979123!2d73.7250245393691!3d20.750301298393563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30635ff06b92b391%3A0xd6680455d3f10128!2sIndia!5e0!3m2!1sen!2sin!4v1709400000000!5m2!1sen!2sin"
+                                src="https://maps.google.com/maps?q=Swaraj+Dental+Implant+Center&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 className="w-full h-full border-0"
                                 loading="lazy"
                             ></iframe>
@@ -113,10 +113,10 @@ export default function Contact() {
 
                         <div className="absolute bottom-4 md:bottom-10 left-4 md:left-10 right-4 md:right-10 z-10 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-2xl border border-white flex items-center justify-between">
                             <div>
-                                <p className="font-black text-slate-900 leading-tight text-sm md:text-base">Swaraj Dental Clinic</p>
-                                <p className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest">Main Junction, City</p>
+                                <p className="font-black text-slate-900 leading-tight text-sm md:text-base">Swaraj Dental & Implant Center </p>
+                                <p className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest"></p>
                             </div>
-                            <a href="#" className="bg-blue-600 text-white p-2 md:p-3 rounded-xl hover:bg-blue-700 transition-all shadow-md">
+                            <a href="https://maps.app.goo.gl/DUwTX7ury4FCpp9YA" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white p-2 md:p-3 rounded-xl hover:bg-blue-700 transition-all shadow-md">
                                 <MapPin size={18} />
                             </a>
                         </div>

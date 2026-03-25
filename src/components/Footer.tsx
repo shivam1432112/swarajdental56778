@@ -93,7 +93,7 @@ export default function Footer() {
                                             href={link.href}
                                             className="text-slate-400 hover:text-white transition-all inline-flex items-center group font-semibold text-sm md:text-base"
                                         >
-                                            <span className="w-0 h-[2px] bg-blue-500 mr-0 transition-all group-hover:w-3 group-hover:mr-2 opacity-0 group-hover:opacity-100" />
+                                            <span className="w-3 h-[2px] bg-blue-500 mr-2 transition-transform duration-300 scale-x-0 group-hover:scale-x-100 origin-left opacity-0 group-hover:opacity-100" />
                                             {link.name}
                                         </Link>
                                     </li>

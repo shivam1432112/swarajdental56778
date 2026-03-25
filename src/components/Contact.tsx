@@ -42,7 +42,7 @@ export default function Contact() {
                             {[
                                 {
                                     label: 'Clinic Address',
-                                    info: 'Swaraj Dental, Opp. Post Office, Main Road, City',
+                                    info: 'Krishna kuti, Plot no 128, CIDCO Waluj Mahanagar 2, Waluj, Tisgaon, Maharashtra 431136',
                                     icon: <MapPin className="text-blue-600" />,
                                     link: 'https://maps.app.goo.gl/DUwTX7ury4FCpp9YA'
                                 },
@@ -114,7 +114,7 @@ export default function Contact() {
                         <div className="absolute bottom-4 md:bottom-10 left-4 md:left-10 right-4 md:right-10 z-10 bg-white/95 backdrop-blur-md p-4 md:p-6 rounded-2xl md:rounded-3xl shadow-2xl border border-white flex items-center justify-between">
                             <div>
                                 <p className="font-black text-slate-900 leading-tight text-sm md:text-base">Swaraj Dental & Implant Center </p>
-                                <p className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest"></p>
+                                <p className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">Krishna kuti, Plot no 128, CIDCO Waluj Mahanagar 2, Waluj, Tisgaon, Maharashtra 431136</p>
                             </div>
                             <a href="https://maps.app.goo.gl/DUwTX7ury4FCpp9YA" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white p-2 md:p-3 rounded-xl hover:bg-blue-700 transition-all shadow-md">
                                 <MapPin size={18} />

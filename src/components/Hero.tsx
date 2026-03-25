@@ -22,7 +22,7 @@ export default function Hero() {
         visible: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.6 }
+            transition: { duration: 0.4 }
         }
     };
 
@@ -109,7 +109,7 @@ export default function Hero() {
 
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                             <Link
-                                href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20a%20dental%20appointment."
+                                href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20appointment."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto bg-blue-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-blue-200 hover:bg-blue-700 hover:-translate-y-1 transition-all active:scale-95 group"
@@ -119,7 +119,7 @@ export default function Hero() {
                             </Link>
 
                             <Link
-                                href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20a%20dental%20appointment."
+                                href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20appointment."
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto bg-slate-50 text-blue-900 border border-slate-200 px-8 md:px-10 py-4 md:py-5 rounded-2xl font-bold flex items-center justify-center space-x-3 transition-all hover:bg-white hover:shadow-xl active:scale-95"
@@ -153,7 +153,7 @@ export default function Hero() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, x: 50 }}
                         animate={{ opacity: 1, scale: 1, x: 0 }}
-                        transition={{ duration: 1, delay: 0.5 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
                         className="relative group order-2 lg:order-2"
                     >
                         <div className="relative z-10 rounded-[40px] md:rounded-[60px] lg:rounded-[80px] overflow-hidden shadow-2xl shadow-blue-200/50 border-[8px] md:border-[12px] border-white max-w-[450px] mx-auto lg:max-w-none lg:ml-auto">
@@ -162,7 +162,7 @@ export default function Hero() {
                                 alt="Professional Dentist - Swaraj Dental Clinic"
                                 width={600}
                                 height={750}
-                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 priority
                             />
                         </div>

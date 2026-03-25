@@ -20,7 +20,7 @@ export default function About() {
                         initial={{ opacity: 0, x: -50 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 0.5 }}
                         className="relative"
                     >
                         <div className="relative z-10 rounded-[48px] overflow-hidden shadow-2xl shadow-blue-200 border-8 border-white group">
@@ -29,7 +29,7 @@ export default function About() {
                                 alt="Modern Clinic Interior - Swaraj Dental & Implant Center"
                                 width={800}
                                 height={600}
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="object-cover transition-transform duration-500 group-hover:scale-110"
                             />
                         </div>
 

@@ -39,7 +39,7 @@ export default function Navbar() {
                 )}
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    <Link href="/" className="flex items-center space-x-2 md:space-x-3 group animate-in fade-in slide-in-from-left duration-700">
+                    <Link href="/" className="flex items-center space-x-2 md:space-x-3 group animate-in fade-in slide-in-from-left duration-500">
                         <div className="relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-transform group-hover:scale-110 bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden">
                             <Image
                                 src="/logo.png"
@@ -122,7 +122,7 @@ export default function Navbar() {
                             initial={{ opacity: 0, x: '100%' }}
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: '100%' }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            transition={{ duration: 0.4, ease: 'easeOut' }}
                             className="fixed top-0 right-0 bottom-0 z-[70] w-full max-w-[320px] lg:hidden bg-white/95 backdrop-blur-3xl flex flex-col shadow-2xl border-l border-white/20 overflow-hidden"
                         >
                             <div className="flex flex-shrink-0 items-center justify-between p-6 border-b border-slate-100/50">
@@ -153,7 +153,7 @@ export default function Navbar() {
                                             className="text-2xl sm:text-3xl font-black text-slate-900 hover:text-blue-600 transition-colors flex items-center group py-2"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
-                                            <span className="w-0 h-1 bg-blue-600 mr-0 group-hover:w-4 group-hover:mr-3 transition-all rounded-full" />
+                                            <span className="w-4 h-1 bg-blue-600 mr-3 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
                                             {link.name}
                                         </Link>
                                     </motion.div>

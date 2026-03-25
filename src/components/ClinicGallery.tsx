@@ -87,9 +87,9 @@ export default function ClinicGallery() {
                                 src={image.src}
                                 alt={image.alt}
                                 fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                className="object-cover transition-transform duration-500 group-hover:scale-110"
                             />
-                            <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                 <div className="bg-white/20 backdrop-blur-md p-4 rounded-full border border-white/20">
                                     <Maximize2 className="text-white w-6 h-6 md:w-8 md:h-8" />
                                 </div>
@@ -139,7 +139,7 @@ export default function ClinicGallery() {
                             initial={{ opacity: 0, scale: 0.9, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.9, y: -20 }}
-                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            transition={{ duration: 0.4, ease: 'easeOut' }}
                             className="relative w-full h-full max-w-5xl flex flex-col items-center justify-center"
                             onClick={(e) => e.stopPropagation()}
                         >

@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white/5 backdrop-blur-sm p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-white/10 hover:bg-white/10 transition-all duration-500 flex flex-col items-center text-center group"
+                            className="bg-white/5 backdrop-blur-sm p-8 md:p-10 rounded-[32px] md:rounded-[40px] border border-white/10 hover:bg-white/10 transition-all duration-300 flex flex-col items-center text-center group"
                         >
                             <div className={`${feature.color} w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl flex items-center justify-center mb-6 md:mb-8 shadow-xl transform transition-transform group-hover:rotate-12`}>
                                 <div className="text-white">

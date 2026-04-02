@@ -87,14 +87,14 @@ export default function Hero() {
                     >
                         <motion.div variants={itemVariants} className="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full border border-blue-100/50 shadow-sm">
                             <Sparkles size={14} className="animate-pulse" />
-                            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase italic">Trusted Care for Every Smile</span>
+                            <span className="text-[10px] md:text-xs font-bold tracking-widest uppercase italic">Your Smile, Our Mission</span>
                         </motion.div>
 
                         <motion.div variants={itemVariants}>
                             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium text-slate-950 leading-[1.1] lg:leading-[1] tracking-tight">
-                                Your <span className="font-[family-name:var(--font-playfair)] italic text-blue-700 font-bold">Smile</span>, <br className="hidden sm:block" />
+                                Trusted <span className="font-[family-name:var(--font-playfair)] italic text-blue-700 font-bold">Care</span> <br className="hidden sm:block" />
                                 <span className="relative">
-                                    Our <span className="font-[family-name:var(--font-playfair)] italic text-blue-600 font-bold">Mission</span>
+                                    for Every <span className="font-[family-name:var(--font-playfair)] italic text-blue-600 font-bold">Smile</span>
                                     <svg className="absolute -bottom-2 md:-bottom-4 left-0 w-full" viewBox="0 0 400 20" fill="none" preserveAspectRatio="none">
                                         <path d="M5 15C100 5 300 5 395 15" stroke="#2563EB" strokeWidth="4" strokeLinecap="round" strokeOpacity="0.3" />
                                     </svg>
@@ -113,7 +113,7 @@ export default function Hero() {
                                 rel="noopener noreferrer"
                                 className="w-full sm:w-auto bg-blue-600 text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-lg flex items-center justify-center space-x-3 shadow-2xl shadow-blue-200 hover:bg-blue-700 hover:-translate-y-1 transition-all active:scale-95 group"
                             >
-                                <span>Book Appointment</span>
+                                <span>Call For Appointment</span>
                                 <Calendar className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                             </Link>
 

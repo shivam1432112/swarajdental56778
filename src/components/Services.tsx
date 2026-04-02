@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle2, ChevronRight, CalendarClock } from 'lucide-react';
 import Link from 'next/link';
@@ -424,18 +424,21 @@ const services = [
 export default function Services() {
     const [selectedService, setSelectedService] = useState<typeof services[0] | null>(null);
 
+    useEffect(() => {
+        if (selectedService) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [selectedService]);
+
     return (
         <section id="services" className="py-24 bg-slate-50 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        className="inline-block bg-blue-100 text-[#1E6FB4] font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest"
-                    >
-                        Our Treatments
-                    </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

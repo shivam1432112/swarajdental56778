@@ -33,7 +33,7 @@ export default function AppointmentForm() {
                                 viewport={{ once: true }}
                                 className="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1.5 rounded-full text-[10px] md:text-xs uppercase tracking-widest border border-blue-200"
                             >
-                                Book an Appointment
+                                Call For Appointment
                             </motion.div>
 
                             <motion.h2
@@ -60,7 +60,7 @@ export default function AppointmentForm() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-6">
                             {[
                                 { label: 'Working Hours', info: 'Mon - Sat: 9 AM - 8 PM', icon: <Clock className="text-blue-600" /> },
-                                { label: 'Contact Number', info: '+91 1800 123 4567', icon: <Phone className="text-blue-600" /> },
+                                { label: 'Contact Number', info: '+91 90217 48601', icon: <Phone className="text-blue-600" /> },
                             ].map((item, idx) => (
                                 <div key={idx} className="flex items-center space-x-4 p-4 md:p-5 bg-white rounded-2xl md:rounded-[24px] shadow-sm border border-slate-100 hover:border-blue-200 transition-all hover:bg-slate-50 cursor-default">
                                     <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 rounded-xl flex items-center justify-center p-2.5">

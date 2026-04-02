@@ -8,12 +8,12 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'Services', href: '#services' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'About', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: 'home' },
+    { name: 'Services', href: 'services' },
+    { name: 'Gallery', href: 'gallery' },
+    { name: 'About', href: 'about' },
+    { name: 'Testimonials', href: 'testimonials' },
+    { name: 'Contact', href: 'contact' },
 ];
 
 export default function Navbar() {
@@ -28,6 +28,18 @@ export default function Navbar() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const scrollToSection = (id: string) => {
+        setIsMobileMenuOpen(false);
+        if (id === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
         <>
             <nav
@@ -39,7 +51,10 @@ export default function Navbar() {
                 )}
             >
                 <div className="max-w-7xl mx-auto flex items-center justify-between">
-                    <Link href="/" className="flex items-center space-x-2 md:space-x-3 group animate-in fade-in slide-in-from-left duration-500">
+                    <button
+                        onClick={() => scrollToSection('home')}
+                        className="flex items-center space-x-2 md:space-x-3 group animate-in fade-in slide-in-from-left duration-500"
+                    >
                         <div className="relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-transform group-hover:scale-110 bg-white rounded-xl shadow-lg border border-slate-100 overflow-hidden">
                             <Image
                                 src="/logo.png"
@@ -51,29 +66,27 @@ export default function Navbar() {
                             />
                         </div>
                         <div className="flex flex-col">
-                            <span className={cn(
-                                "text-xl md:text-3xl font-bold tracking-tight transition-colors text-black"
-                            )}>
+                            <span className={cn("text-sm md:text-xl font-bold tracking-tight transition-colors text-black")}>
                                 Swaraj Dental
                             </span>
                             <div className="flex items-center -mt-0.5">
-                                <span className="text-[7px] md:text-[10.5px] font-medium uppercase tracking-[0.2em] md:tracking-[0.3em] text-black">
+                                <span className="text-sm md:text-xl font-bold tracking-tight transition-colors text-black">
                                     & Implant Center
                                 </span>
                             </div>
                         </div>
-                    </Link>
+                    </button>
 
                     {/* Desktop Menu */}
                     <div className="hidden lg:flex items-center space-x-8">
                         {navLinks.map((link) => (
-                            <Link
+                            <button
                                 key={link.name}
-                                href={link.href}
+                                onClick={() => scrollToSection(link.href)}
                                 className="text-slate-600 hover:text-blue-600 font-bold transition-colors text-sm"
                             >
                                 {link.name}
-                            </Link>
+                            </button>
                         ))}
                         <Link
                             href="https://wa.me/919021748601?text=Hi,%20I%20want%20to%20book%20a%20dental%20appointment."
@@ -81,7 +94,7 @@ export default function Navbar() {
                             rel="noopener noreferrer"
                             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg shadow-blue-200 hover:shadow-blue-300 active:scale-95"
                         >
-                            Book Appointment
+                            Call For Appointment
                         </Link>
                     </div>
 
@@ -126,12 +139,12 @@ export default function Navbar() {
                             className="fixed top-0 right-0 bottom-0 z-[70] w-full max-w-[320px] lg:hidden bg-white/95 backdrop-blur-3xl flex flex-col shadow-2xl border-l border-white/20 overflow-hidden"
                         >
                             <div className="flex flex-shrink-0 items-center justify-between p-6 border-b border-slate-100/50">
-                                <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
+                                <button onClick={() => scrollToSection('home')} className="flex items-center space-x-2">
                                     <div className="w-8 h-8 bg-white rounded-lg shadow-sm flex items-center justify-center p-1 border border-slate-100">
                                         <Image src="/logo.png" alt="Logo" width={24} height={24} />
                                     </div>
                                     <span className="font-black text-black text-sm tracking-tight">Swaraj Dental</span>
-                                </Link>
+                                </button>
                                 <button
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className="p-3 bg-slate-100/80 hover:bg-slate-200 text-slate-900 rounded-full transition-colors active:scale-90"
@@ -148,14 +161,13 @@ export default function Navbar() {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.1 + idx * 0.05 }}
                                     >
-                                        <Link
-                                            href={link.href}
-                                            className="text-2xl sm:text-3xl font-black text-slate-900 hover:text-blue-600 transition-colors flex items-center group py-2"
-                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        <button
+                                            onClick={() => scrollToSection(link.href)}
+                                            className="text-2xl sm:text-3xl font-black text-slate-900 hover:text-blue-600 transition-colors flex items-center group py-2 w-full text-left"
                                         >
                                             <span className="w-4 h-1 bg-blue-600 mr-3 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full" />
                                             {link.name}
-                                        </Link>
+                                        </button>
                                     </motion.div>
                                 ))}
                             </div>
